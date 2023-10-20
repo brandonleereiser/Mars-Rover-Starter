@@ -48,14 +48,14 @@ class Rover {
                roverStatus: { mode: this.mode, generatorWatts: this.generatorWatts, position: this.position }
             })
          }
-         if ((testMessage.commands)[i].commandType === 'MODE_CHANGE'){
-            if ((testMessage.commands)[i].value === 'LOW_POWER' || (testMessage.commands)[i].value === 'NORMAL'){
+         if ((testMessage.commands)[i].commandType == 'MODE_CHANGE'){
+            if ((testMessage.commands)[i].value == 'LOW_POWER' || (testMessage.commands)[i].value == 'NORMAL'){
                this.mode = (testMessage.commands)[i].value;
             }
             results[i] = ({completed: true})
          }
          if ((testMessage.commands)[i].commandType === 'MOVE'){
-            if (this.mode === 'LOW_POWER'){
+            if (this.mode == 'LOW_POWER'){
                results[i] = ({completed: false})
             } else {
                this.position = (testMessage.commands)[i].value;

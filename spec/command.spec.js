@@ -10,12 +10,12 @@ describe("Command class", function() {
   });
   //test 2
   it("constructor sets the command type", function(){
-    let testCommand = new Command("testObject", "testObject2");
-    expect(testCommand.commandType).toBe("testObject");
+    let testCommand = new Command("STATUS_CHECK", "MOVE");
+    expect(testCommand.commandType).toBe("STATUS_CHECK");
   });
   //test 3
   it("constructor sets a value passed in as 2nd argument", function(){
-    let testCommand = new Command("testObject", "testObject2");
-    expect(testCommand.value).toBe('testObject2');
+    let testCommand = new Command("STATUS_CHECK", "MOVE");
+    expect(testCommand.value).toBe('MOVE');
   });
 });
